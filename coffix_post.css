@@ -1,0 +1,77 @@
+body,
+html {
+    height: 100%;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Superior Text", Times, serif;
+  }
+
+  /*.menu {display: none}*/
+
+  .bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("http://buzymindslimited.com/sites/default/files/Album%20Pics/Coffee-cup-and-newspaper-uhd-wallpapers.jpg");
+    min-height: 90%;
+  }
+
+  #mapGoesHere {
+    height: 100vh;
+  }
+
+  img {
+    display: block;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #999;
+    padding: 2px;
+    border-radius: 8px;
+  }
+  .gm-style-iw {
+    color: black;
+  }
+
+  a {
+    /*text-align: justify;*/
+    /*line-height: 1.2em;*/
+    font-size: 20px;
+    color: white;
+  }
+.page-footer {
+  background-color: #4e342e;
+}
+.page-footer ul li a:hover {
+  background: #9e9e9e;
+}
+.card {
+  color: black;
+  font-family: Domine;
+  font-size: 20px;
+}
+.card a {
+  color: blue;
+  font-family: sans-serif;
+}
+hr.rule {
+  padding: 0;
+  margin-top: 25px;
+  border: none;
+  border-top: medium double #333;
+  color: #E8B4BC;
+  text-align: center;
+  width: 100%;
+}
+hr.rule:after {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+}
