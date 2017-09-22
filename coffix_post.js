@@ -57,12 +57,12 @@ function initMap() {
 
 }
 
-$.get('https://newsapi.org/v1/articles?source=the-wall-street-journal&sortBy=top&apiKey=d3c7138c3b3b4fbfa75ea4c537b2a552', function (data) {
+$.get('https://newsapi.org/v1/articles?source=nfl-news&sortBy=top&apiKey=d3c7138c3b3b4fbfa75ea4c537b2a552', function (data) {
     console.log(data.articles);
     for (var i = 0; i < data.articles.length; i++) {
       var newCard = '<div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + data.articles[i].urlToImage + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + data.articles[i].title + '<i class="material-icons right">more_vert</i></span><p><a href="' + data.articles[i].url + '">Read More</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span><p>' + data.articles[i].description + '</p></div></div>';
 
-      $('#first').append(newCard);
+      $('#second').append(newCard);
     }
   });
 
@@ -71,7 +71,7 @@ $.get('https://newsapi.org/v1/articles?source=usa-today&sortBy=top&apiKey=d3c713
       for (var i = 0; i < data.articles.length; i++) {
         var newCard = '<div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + data.articles[i].urlToImage + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + data.articles[i].title + '<i class="material-icons right">more_vert</i></span><p><a href="' + data.articles[i].url + '">Read More</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span><p>' + data.articles[i].description + '</p></div></div>';
 
-        $('#second').append(newCard);
+        $('#first').append(newCard);
 
       }
     });
