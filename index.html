@@ -1,65 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.4.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.4.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.4.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.4.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.4.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+  <title>Coffix</title>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="coffix_post.css">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off w3-mobile" id="myNavbar">
+      <a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
+      <a href="#map" class="w3-bar-item w3-button w3-mobile">Find Coffee</a>
+      <a href="#first" class="w3-bar-item w3-button w3-mobile">Featured Stories</a>
+      <a href="https://www.nycgo.com/things-to-do/shopping-fashion" class="w3-bar-item w3-button w3-mobile">Shopping</a>
+      <a href="https://www.google.com/"><i class="w3-bar-item w3-button w3-mobile material-icons">search</i></a>
+      <a href="#" class="w3-bar-item w3-display-topright w3-mobile" id="date"></a>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min w3-mobile" id="home">
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white w3-hide-small" style="font-size:100px">The Coffix Post</span>
+      <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Coffix</b></span>
+      <p><a href="#map" class="w3-button w3-xxlarge w3-black">Your daily fix of Coffee & News</a></p>
+    </div>
+  </header>
+
+  <!-- Map Container -->
+  <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="map">
+    <div id="mapGoesHere">
+
+    </div>
+
+    <hr class="rule">
+    <h1 class="w3-center">Featured Stories</h1>
+    <div class="container">
+    <div class="row">
+      <div class="col s4" id="first">
+
+      </div>
+
+
+      <div class="col s4" id="second">
+
+      </div>
+
+
+      <div class="col s4" id="third">
+
+
+      </div>
+    </div>
+</div>
+
+
+
+
+
+  </div>
+
+
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">The Coffix Post</h5>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="#map">Find Coffee</a></li>
+            <li><a class="grey-text text-lighten-3" href="#first">Featured Stories</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.nycgo.com/things-to-do/shopping-fashion">Shopping</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2017 Copyright <a class="linkedin" href="https://www.linkedin.com/in/surbhi0206/">Surbhi Sharma</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Add Google Maps -->
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXrO_2REBrv7MjPPSuWblW6RqbaYidjKM&libraries=places&callback=initMap" async defer></script>
+  <script src="coffix_post.js">
+  </script>
+
+</body>
+
 </html>
